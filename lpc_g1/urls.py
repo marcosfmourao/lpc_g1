@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from evento.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', inicio, name='inicio'),
+    url('^evento/(?P<pk>[0-9]+)/$', pesqEvento),
+	url(r'^eventos/', listaEventos, name='listaEventos'),
 ]
